@@ -84,7 +84,7 @@ body {
   }
 }
 .card__item {
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 0.5rem;
   box-shadow: 3rem 3rem 3rem var(--greyShadow400);
 }
@@ -111,7 +111,7 @@ body {
   margin-bottom: 1.25rem;
 }
 .card__item .card__text-area .card__item-text {
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   font-weight: var(--font-weight500);
 }
 
