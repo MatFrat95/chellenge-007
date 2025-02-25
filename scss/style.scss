@@ -118,7 +118,7 @@ body {
 
 @media (min-width: 1200px) {
 	.container {
-		margin: 10rem auto;
+		margin: 14rem auto;
 	}
 	.grid {
 		grid-template-columns: repeat(4, 1fr);
@@ -171,7 +171,7 @@ body {
 			margin-bottom: 1.25rem;
 		}
 		.card__item-text {
-			font-size: .75rem;
+			font-size: .85rem;
 			font-weight: var(--font-weight500);
 		}
 	}
@@ -188,7 +188,7 @@ body {
 }
 
 .bgc__grey {
-	background-color: var(--grey400);
+	background-color: var(--grey500);
 	@include font-white();
 }
 
