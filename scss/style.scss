@@ -1,0 +1,201 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	// primary colors
+	--purple50: hsl(260, 100%, 95%);
+	--purple300: hsl(264, 82%, 80%);
+	--purple500: hsl(263, 55%, 52%);
+
+	// neutral colors
+	--white: hsl(0, 0%, 100%);
+	--grey100: hsl(214, 17%, 92%);
+	--grey200: hsl(0, 0%, 81%);
+	--grey400: hsl(224, 10%, 45%);
+	--greyShadow400: hsla(224, 10%, 45%, .5);
+	--grey500: hsl(217, 19%, 35%);
+	--darkBlue: hsl(219, 29%, 14%);
+	--black: hsl(0, 0%, 7%);
+
+	// broder settings
+	--img-border: 0.2rem solid;
+
+	// font weights
+	--font-weight500: 500;
+	--font-weight600: 600;
+}
+
+// mixins
+
+// text color for .bgc__purple and .bgc__grey cards
+@mixin font-white {
+	.card__item-text {
+		color: var(--grey100);
+	}
+	.card__user-info-status {
+		color: var(--grey200);
+	}
+	.card__item-title,
+	.card__user-info-name {
+		color: var(--grey100);
+	}
+}
+// text color for .bgc-white card
+@mixin font-dark {
+	.card__item-text {
+		color: var(--grey500);
+	}
+	.card__user-info-status {
+		color: var(--grey200);
+	}
+	.card__item-title,
+	.card__user-info-name {
+		color: var(--grey400);
+	}
+}
+// text color for .dark-blue card
+@mixin font-grey {
+	.card__item-text,
+	.card__user-info-status,
+	.card__item-title,
+	.card__user-info-name {
+		color: var(--grey200);
+	}
+}
+
+// ................................
+// footer styles
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+
+// basic settings
+body {
+	background-color: var(--grey100);
+}
+
+.main {
+	font-family: 'Barlow Semi Condensed', serif;
+}
+
+.container {
+	width: 85%;
+	max-width: 1400px;
+	margin: 4rem auto;
+}
+
+
+
+
+// grid settings .......................
+.grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2.5rem;
+}
+
+// grid media settings
+
+@media (min-width: 600px) {
+	.grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.card__item:nth-of-type(1) {
+		grid-column: 1 / 3;
+	}
+	
+}
+
+@media (min-width: 1200px) {
+	.grid {
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+	}
+	.card__item:nth-of-type(1) {
+		grid-column: 1 / 3;
+		background-image: url(../images/bg-pattern-quotation.svg);
+		background-repeat: no-repeat;
+		background-position: 85% 0;
+	}
+	.card__item:nth-of-type(4) {
+		grid-column: 2 / 4;
+		grid-row: 2 / 3;
+	}
+	.card__item:nth-of-type(5) {
+		grid-column: 4 / 5;
+		grid-row: 1 / 3;
+	}
+}
+
+// card basic settiings
+
+.card__item {
+	padding: 2rem;
+	border-radius: 0.5rem;
+	box-shadow:  3rem 3rem 3rem var(--greyShadow400);
+
+	.card__user-info {
+		display: flex;
+		margin-bottom: 1rem;
+		.card__user-info-img {
+			width: 2.5rem;
+			height: 2.5rem;
+			border-radius: 50%;
+		}
+		.card__user__info-data {
+			margin: 0 1.1rem;
+			font-weight: var(--font-weight500);
+		}
+		.card__user-info-status {
+			margin-top: 0.25rem;
+			font-size: 0.75rem;
+		}
+	}
+	.card__text-area {
+		.card__item-title {
+			font-weight: var(--font-weight600);
+			margin-bottom: 1.25rem;
+		}
+		.card__item-text {
+			font-weight: var(--font-weight500);
+		}
+	}
+}
+
+// card colors settings
+
+.bgc__purple {
+	background-color: var(--purple500);
+	@include font-white();
+	.card__user-info-img {
+		border: var(--img-border) var(--purple300);
+	}
+}
+
+.bgc__grey {
+	background-color: var(--grey400);
+	@include font-white();
+}
+
+.bgc__white {
+	background-color: var(--white);
+	@include font-dark();
+}
+
+.bgc__dark-blue {
+	background-color: var(--darkBlue);
+	@include font-grey();
+	.card__user-info-img {
+		border: var(--img-border) var(--purple500);
+	}
+}
