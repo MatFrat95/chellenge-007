@@ -32,10 +32,6 @@
   color: hsl(228, 45%, 44%);
 }
 
-body {
-  background-color: var(--grey100);
-}
-
 .main {
   font-family: "Barlow Semi Condensed", serif;
 }
